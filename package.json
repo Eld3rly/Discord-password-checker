@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "request": "^2.88.2"
+  },
+  "name": "discord-password-checker",
+  "description": "Checks account password for validity ",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eld3rly/Discord-password-checker.git"
+  },
+  "keywords": [
+    "discord",
+    "password",
+    "pass",
+    "check",
+    "checker",
+    "dis"
+  ],
+  "author": "Eld3rly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eld3rly/Discord-password-checker/issues"
+  },
+  "homepage": "https://github.com/Eld3rly/Discord-password-checker#readme"
+}
