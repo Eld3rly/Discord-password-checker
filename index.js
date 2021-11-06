@@ -1,21 +1,20 @@
 // Require modules
-const request = require(`request`);
+const request = require(`axios`);
 
 // Run args
 const password = process.argv[2];
 const token = process.argv[3]
 
-// Password check
-request.patch({
-    url: `https://discord.com/api/v9/users/@me`,
-    headers: {
-        authorization: token
+axios.patch("https://discord.com/api/v9/users/@me",
+    {
+        "email": "",
+        "password": password
     },
-    json: {
-        email: ``,
-        password: password
+    {
+        headers: {
+            "authorization": token
+        },
     }
-}, (e, r, b) => {
-    if (e || r.statusCode != 400) return console.error(`Password verification failed, possible reasons:\nNo internet connection\nInvalid token`);
-    console.log(b.errors.password ? `Invalid password` : `Valid password`);
-});
+).catch(e=>{
+    console.log(e.response.data.errors.password?"Invalid password":"Valid password")
+})
